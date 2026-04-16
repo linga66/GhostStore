@@ -46,17 +46,7 @@ Data distribution is handled by a **Consistent Hashing Ring** spanning 2⁶⁴ s
 
 ### 3. Request Flow
 
-```
-Client → GET /user123 → Node A
-            │
-            ▼
-     Hash("user123") → Check Ring
-            │
-     ┌──────┴──────┐
-     │             │
-  Node A owns    Node B owns
-  → serve local  → proxy to Node B → return to client
-```
+![RequestFlow.png](RequestFlow.png)
 
 ---
 
