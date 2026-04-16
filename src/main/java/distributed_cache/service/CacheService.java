@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class CacheService {
     @Value("${server.port}") private String port;
     @Value("${cluster.nodes}") private String nodes;
-    private final LRUCache<String, String> cache = new LRUCache<>(100);
+    private final LRUCache<String, String> cache = new LRUCache<>(3);
     private final ConsistentHashRouter router = new ConsistentHashRouter();
     private final RestTemplate rest = new RestTemplate();
 
